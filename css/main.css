@@ -6,11 +6,42 @@
     box-sizing: border-box;
 }
 
+
+/*estilos generales*/
+
 body{
-    background-color: rgb(247, 241, 241);
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-style:normal
+}
+body{
+    background-color:black
+}
+#spotify-widget{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem; 
+  justify-content: center; 
+  padding: 1rem; /
 }
 
+#spotify-widget iframe{
+  border-radius: 12px;
+  flex: 1 1 45%; 
+  max-width: 100%;
+  height: 352px;
+  }
+
 /* estilos vesion mobile*/
+
+
+ /*estilos de header*/
+
+header{
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-style:normal
+}
 header{
     display: flex;
     align-items: center;
@@ -25,16 +56,45 @@ header nav ul{
     padding-right: 20px;
 }
 
+  /*estilos de main*/
 
+  #spotify-widget{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem; 
+    justify-content: center; 
+    padding: 1rem; /
+  }
+    
+     
+  main{
+    color: white;
+    text-align: center;
+    justify-content: center;
+    font-size: x-large;
+    margin: 30px 30px;
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-style:normal
+    
+}
 main{
-    padding: 2rem;
+
+    margin: 10px 10px;
+    height: 30vh;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(4,1fr);
-    row-gap: 1rem;
+    grid-template-rows: repeat(9,70%);
+   row-gap: 1rem;
+
 }
 
-main .div-uno{
+
+main div img{
+    
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     background-color: whitesmoke;
     color: black;
     display: flex;
@@ -42,18 +102,11 @@ main .div-uno{
     gap: 1rem;
     padding: 1rem;
 }
-main .div-uno h1 span{
-    display: block;
-}
-main .div-uno .boton{
-   padding: 0.5rem;
-   border-radius: 5px;
-   background-color: blueviolet;
-   width: 40%;
-   text-align: center;
-   margin: 0% auto;
-}
-main .div-generico{
+
+
+main .contenedor{
+    
+  
     text-align: center;
     background-color: whitesmoke;
     padding: 0.5rem;
@@ -61,62 +114,103 @@ main .div-generico{
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+    align-content: center;
 }
 
-main .div-generico img{
-    width: 15%;
 
+    /*estilos de footer*/
+    footer{
+        text-align: center;
+        color: whitesmoke;
+      padding: 10px;
+      position: static;
+    }
+
+
+
+ main .img-cuatro, main .img-cinco, main .img-seis{
+   display: none;
 }
+ 
 
 /*estilos de main tablet*/ 
-@media screen and (min-width: 600px) {
-    main .div-uno h1 span{
-        display: inline;
-  }
- main .div-uno, main .div-generico {
-    padding: 2rem;
-  }
 
-
-    main .div-uno .boton {
-        width: 30%;
-    }
-    }
-
-    /* estilos de footer */
-
-  footer{
-    text-align: center;
-    color: whitesmoke;
+@media screen and (min-width: 600px){
+ /*estilos de main*/
+ 
+ #spotify-widget iframe {
+  justify-content: center;
+  display: flex;
+   width: 100%;
+   
    }
 
+  main{
+    grid-template-columns: repeat(2, 1fr) ;
+    grid-template-rows: repeat(2, 50%);
+    column-gap: 1.5rem;
+  }
+ 
+  main .img-cero{
+    grid-column: span 2;
+    grid-row: span 3;
+  }
+  
+  main .img-tres{
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+    
+    }
 
-    /*estilos de dekstop*/
-    @media screen and (min-width:1024px) {
-        main {
-            padding: 2rem 6rem;
-            grid-template-columns: 1.5fr repeat(3,1fr);
-            grid-template-rows: 1fr;
-            column-gap: 1rem;
+
+    /*estilos de desktop*/
+    @media screen and (min-width:1024px){
+      main .img-cuatro, main .img-cinco, main .img-seis{
+        display: block;
         }
-
-        main .div-uno .boton {
-            width: 40%;
+      
         }
-
-        main .div-uno, main .div-generico {
-            padding: 3rem;
-          }
-
-          main .div-generico {
-            gap: 2rem;
-          }
-
-          main .div-generico img {
-            width: 25% ;
-          }
-
-          main .div-generico h2 {
-            font-size: 1.4rem;
-          }
+        #spotify-widget iframe {
+        
+       justify-content: center;
+        display: flex;
+         width: 100%;
+         
          }
+
+        main {
+  
+            grid-template-columns: repeat(4,1fr);
+            grid-template-rows: 50% 15% 15% 50%;
+        }
+
+        
+        main .img-cero{ 
+          grid-column: span 4;
+          grid-row: span 4;
+          }
+        
+         main .img-uno, main .img-dos, main .img-3{
+          grid-row: span 1;
+         }
+         main .img-cuatro, main .img-seis{
+         grid-row: span 2.5;
+         grid-column: span 2;
+          }
+          main .img-cinco{
+            grid-column: span 2;
+           grid-row: span 2;
+        }
+     
+         
+      
+      
+        
+
+
+
+
+
+
+      
